@@ -40,7 +40,7 @@ Telegram-шоп-бот — это бот, который позволяет по
    - На Windows:
 
      ```bash
-     .env\Scriptsctivate
+     .venv/Scripts/activate
      ```
 
    - На macOS/Linux:
