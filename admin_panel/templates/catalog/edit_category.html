@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Редактировать категорию{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Редактировать категорию: {{ category.name }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Сохранить изменения</button>
+        <a href="{% url 'category_list' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}

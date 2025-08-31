@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Список товаров{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Список товаров</h1>
+
+    <!-- Кнопка добавления товара -->
+    <a href="{% url 'add_product' %}" class="btn btn-success mb-3">
+        ➕ Добавить товар
+    </a>
+
+    <!-- Таблица для отображения товаров -->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Название товара</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Категория</th>
+                <th scope="col">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }} руб.</td>
+                <td>{{ product.category.name }}</td>
+                <td>
+                    <!-- Кнопка редактирования -->
+                    <a href="{% url 'edit_product' product.product_id %}" class="btn btn-warning btn-sm">
+                        <i class="fas fa-edit"></i> Редактировать
+                    </a>
+                    <!-- Кнопка удаления -->
+                    <a href="{% url 'delete_product' product.product_id %}" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash"></i> Удалить
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
