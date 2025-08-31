@@ -20,7 +20,7 @@ Telegram-шоп-бот — это бот, который позволяет по
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/ваш-репозиторий/shop-bot.git
+   git clone https://github.com/Rashid20071601/Shop-bot.git
    ```
 
 2. Перейдите в каталог проекта:
