@@ -1,5 +1,5 @@
 # Импорт библиотек
-from aiogram.dispatcher.filters.state import State, StatesGroup
+from aiogram.fsm.state import State, StatesGroup
 import os
 import sys
 import django
