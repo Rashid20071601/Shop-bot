@@ -3,7 +3,7 @@ import logging
 from aiogram import types
 from . import catalog, start, cart
 from texts import texts
-from aiogram.fsm.context import FSMContext
+from aiogram.dispatcher.storage import FSMContext
 from logging_config import setup_logger
 
 # Настроим логгер

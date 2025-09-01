@@ -1,6 +1,6 @@
 # Импорт библиотек
 from aiogram import types
-from aiogram.fsm.context import FSMContext
+from aiogram.dispatcher.storage import FSMContext
 from keyboards import inline, reply
 from texts import texts
 from config import CartState
