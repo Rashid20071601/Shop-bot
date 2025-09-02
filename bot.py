@@ -71,6 +71,7 @@ logger.info("Обработчик кнопки 'Назад' зарегистри
 
 # Обработчик команды /catalog для отображения категорий
 dp.message_handler(lambda message: message.text == texts.catalog)(handlers.catalog.show_categories)
+dp.message_handler(commands=['catalog'])(handlers.catalog.show_categories)
 logger.info("Обработчик команды /catalog зарегистрирован")
 
 # Обработчик выбора категории
@@ -112,7 +113,8 @@ logger.info("Обработчик получения телефона зарег
 # ==================== Регистрация обработчиков корзины ====================
 
 # Обработчик просмотра товаров в корзине
-dp.message_handler(lambda message: message.text == texts.cart)(handlers.cart.view_cart)
+dp.message_handler(lambda message: message.text == texts.cart or message.text == '/cart')(handlers.cart.view_cart)
+dp.message_handler(commands=['cart'])(handlers.cart.view_cart)
 logger.info("Обработчик просмотра товаров в корзине зарегистрирован")
 
 # Обработчик для добавления товара в корзину
