@@ -40,6 +40,7 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 EXCLUDED_BUTTONS = [
     texts.cart,
     texts.delete_product_from_cart,
+    texts.clearing_cart,
     texts.clear_cart,
     texts.catalog,
     texts.update_data,
@@ -127,7 +128,7 @@ dp.message_handler(state=config.CartState.waiting_for_product_id)(handlers.cart.
 logger.info("Обработчик удаления товаров из корзины зарегистрирован")
 
 # Обработчик очистки корзины
-dp.message_handler(lambda message: message.text == texts.clear_cart)(handlers.cart.ask_clear_cart)
+dp.message_handler(lambda message: message.text == texts.clearing_cart)(handlers.cart.ask_clear_cart)
 dp.callback_query_handler(lambda call: call.data == 'confirm_clear_cart')(handlers.cart.clear_cart)
 dp.callback_query_handler(lambda call: call.data == 'cancel_clear_cart')(handlers.cart.do_not_clear_cart)
 logger.info("Обработчик очистки корзины зарегистрирован")

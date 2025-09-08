@@ -28,7 +28,7 @@ logger.debug("Создана стартовая reply-клавиатура: star
 # Клавиатура для корзины
 cart_kb = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text=texts.delete_product_from_cart), KeyboardButton(text=texts.clear_cart)],
+        [KeyboardButton(text=texts.delete_product_from_cart), KeyboardButton(text=texts.clearing_cart)],
     ], resize_keyboard=True, one_time_keyboard=True
 )
 logger.debug("Создана reply-клавиатура для корзины: cart_kb")
